@@ -1,1 +1,4 @@
 setprop ro.cwm.forbid_format /bootloader,/dfs,/backup,/splash
+
+# Disable debugging notify icon on statusbar
+persist.adb.notify=0
