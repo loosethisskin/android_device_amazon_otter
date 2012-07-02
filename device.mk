@@ -119,7 +119,7 @@ PRODUCT_PROPERTY_OVERRIDES := \
 
 PRODUCT_CHARACTERISTICS := tablet,nosdcard
 
-DEVICE_PACKAGE_OVERLAYS := device/amazon/otter/overlay
+DEVICE_PACKAGE_OVERLAYS := device/amazon/otter/overlay/aosp
 
 # enable Google-specific location features,
 # like NetworkLocationProvider and LocationCollector
