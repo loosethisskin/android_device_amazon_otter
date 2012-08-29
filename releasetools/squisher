@@ -59,6 +59,9 @@ cd $REPACK/ota/system/app
 find ./ -name \*.apk | $XARGS $OPTICHARGER
 )
 
+# Remove unwanted apps
+rm $REPACK/ota/system/app/RomManager.apk
+
 # Fix build.prop
 $SED -i \
 	-e '/ro\.kernel\.android\.checkjni/d' \
