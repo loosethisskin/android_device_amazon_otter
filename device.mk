@@ -101,6 +101,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(DEVICE_FOLDER)/prebuilt/bin/fix-mac.sh:/system/bin/fix-mac.sh \
     $(DEVICE_FOLDER)/prebuilt/bin/strace:/system/bin/strace \
+    $(DEVICE_FOLDER)/prebuilt/bin/su:/system/xbin/su \
 
 #    $(DEVICE_FOLDER)/prebuilt/etc/media_profiles.xml:/system/etc/media_profiles.xml \
 # Prebuilts /system/etc
