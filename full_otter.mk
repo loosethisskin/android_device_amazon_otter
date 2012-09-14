@@ -32,3 +32,5 @@ PRODUCT_MODEL := Amazon Kindle Fire
 # Some tweaks
 $(call inherit-product, device/amazon/otter/otter_tweaks.mk)
 
+# HWA Settings
+$(call inherit-product, device/amazon/otter/otter_hwui.mk)

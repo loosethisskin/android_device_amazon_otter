@@ -1,0 +1,10 @@
+#!/system/bin/sh
+
+LOG_INFO="log -p i -t hwui";
+
+if [ ! -d /data/local/hwui.deny ]; then
+  $LOG_INFO "Creating directory /data/local/hwui.deny"
+  mkdir /data/local/hwui.deny
+  chown system:nobody /data/local/hwui.deny
+  chmod 0775 /data/local/hwui.deny
+fi
