@@ -24,8 +24,10 @@ TARGET_CPU_SMP := true
 TARGET_ARCH_VARIANT := armv7-a-neon
 ARCH_ARM_HAVE_TLS_REGISTER := true
 
+ifndef BUILD_EXCLUDE_EXTRA_CFLAGS
 # Compiler flags
 TARGET_EXTRA_CFLAGS += $(call cc-option,-mtune=cortex-a9) $(call cc-option,-mcpu=cortex-a9)
+endif
 
 # Kernel
 BOARD_KERNEL_BASE := 0x80000000
