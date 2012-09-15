@@ -4,6 +4,7 @@ PRODUCT_COPY_FILES += \
     device/amazon/otter/prebuilt/etc/init.d/01sysctl:system/etc/init.d/01sysctl \
     device/amazon/otter/prebuilt/etc/init.d/02oom:system/etc/init.d/02oom \
     device/amazon/otter/prebuilt/etc/init.d/03mount:system/etc/init.d/03mount \
+    device/amazon/otter/prebuilt/etc/init.d/05zram:system/etc/init.d/05zram \
     device/amazon/otter/prebuilt/etc/sysctl.conf:system/etc/sysctl.conf
 
 # build.prop tweaks

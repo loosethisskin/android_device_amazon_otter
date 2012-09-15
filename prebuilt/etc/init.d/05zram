@@ -1,0 +1,28 @@
+#!/system/bin/sh
+
+LOG_INFO="log -p i -t zram";
+LOG_ERROR="log -p e -t zram";
+
+zram=`getprop persist.service.zram`
+
+$LOG_INFO "Stopping compcache";
+compcache stop
+
+if [ -z "$zram" ]; then
+  exit
+fi
+if [ "$zram" -eq 0 ]; then
+  exit
+fi
+if [ "$zram" -gt 40 ]; then
+  # safety net
+  $LOG_INFO "persist.service.zram set too high ($zram), reducing it to 40"
+  zram=40
+fi
+
+zram_kb=`echo $((414240/100*${zram}))`
+
+if [ ! -z "$zram_kb" ]; then
+  $LOG_INFO "Starting compcache with $zram_kb KB";
+  compcache start $zram_kb
+fi
