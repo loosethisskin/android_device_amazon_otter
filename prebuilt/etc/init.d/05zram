@@ -14,13 +14,17 @@ fi
 if [ "$zram" -eq 0 ]; then
   exit
 fi
+
+$LOG_INFO "ZRAM Size is ${zram}%"
 if [ "$zram" -gt 40 ]; then
   # safety net
   $LOG_INFO "persist.service.zram set too high ($zram), reducing it to 40"
   zram=40
 fi
 
-zram_kb=`echo $((414240/100*${zram}))`
+ram_size_kb=`cat /proc/meminfo | awk 'match($1,"MemTotal") == 1 {print $2}'`
+$LOG_INFO "RAM Size is ${ram_size_kb} KB"
+zram_kb=`echo $((${ram_size_kb}/100*${zram}))`
 
 if [ ! -z "$zram_kb" ]; then
   $LOG_INFO "Starting compcache with $zram_kb KB";
