@@ -68,7 +68,7 @@ rm -rf $REPACK/parallel
 )
 
 # Remove unwanted apps
-rm $REPACK/ota/system/app/RomManager.apk
+rm $REPACK/ota/system/app/CMUpdater.apk
 
 # Fix build.prop
 $SED -i \
