@@ -126,24 +126,16 @@ PRODUCT_PACKAGES += \
     com.android.future.usb.accessory \
 
 # AOSP specific
-ifndef CM_BUILD
-
-# copy all kernel modules under the "modules" directory to system/lib/modules
-PRODUCT_COPY_FILES += $(shell \
-    find $(DEVICE_FOLDER)/modules -name '*.ko' \
-    | sed -r 's/^\/?(.*\/)([^/ ]+)$$/\1\2:system\/lib\/modules\/\2/' \
-    | tr '\n' ' ')
-
+ifeq ($(TARGET_PRODUCT),full_otter)
 # Prebuilt /system/media
 PRODUCT_COPY_FILES += \
     $(DEVICE_FOLDER)/prebuilt/media/bootanimation.zip:/system/media/bootanimation.zip \
+    $(DEVICE_FOLDER)/prebuilt/bin/su:/system/xbin/su
+endif
 
-else
 PRODUCT_PACKAGES += \
     Superuser \
-    su \
-
-endif
+    su
 
 PRODUCT_PROPERTY_OVERRIDES := \
     ro.sf.lcd_density=160 \
