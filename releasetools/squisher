@@ -69,9 +69,6 @@ cd $REPACK/ota
 rm -rf $REPACK/parallel
 )
 
-# Remove unwanted apps
-rm $REPACK/ota/system/app/CMUpdater.apk
-
 # Fix build.prop
 $SED -i \
 	-e '/ro\.kernel\.android\.checkjni/d' \
