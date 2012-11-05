@@ -70,8 +70,7 @@ PRODUCT_PACKAGES += \
 
 # Apps
 PRODUCT_PACKAGES += \
-    OtterParts \
-    FileManager \
+    OtterParts
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel \
