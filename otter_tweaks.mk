@@ -1,5 +1,5 @@
 # kernel and build.prop tweaks
-ifndef BUILD_EXCLUDE_SYSCTL_TWEAK
+ifneq (,$(filter true 1,$(TARGET_INCLUDE_SYSCTL_TWEAK)))
 
 PRODUCT_COPY_FILES += \
     device/amazon/otter/prebuilt/etc/sysctl.conf:system/etc/sysctl.conf \
@@ -14,7 +14,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 endif
 
 # OOM init.d script
-ifndef BUILD_EXCLUDE_OOM_TWEAK
+ifneq (,$(filter true 1,$(TARGET_INCLUDE_OOM_TWEAK)))
 
 PRODUCT_COPY_FILES += \
     device/amazon/otter/prebuilt/etc/init.d/02oom:system/etc/init.d/02oom \
@@ -22,7 +22,7 @@ PRODUCT_COPY_FILES += \
 endif
 
 # mount options tweak
-ifndef BUILD_EXCLUDE_MOUNT_TWEAK
+ifneq (,$(filter true 1,$(TARGET_INCLUDE_MOUNT_TWEAK)))
 
 PRODUCT_COPY_FILES += \
     device/amazon/otter/prebuilt/etc/init.d/03mount:system/etc/init.d/03mount \
@@ -30,7 +30,7 @@ PRODUCT_COPY_FILES += \
 endif
 
 # hwui: Allow to blacklist android applications
-ifndef BUILD_EXCLUDE_HWUI_SETTINGS
+ifneq (,$(filter true 1,$(TARGET_INCLUDE_HWUI_SETTINGS)))
 
 PRODUCT_COPY_FILES += \
     device/amazon/otter/prebuilt/etc/init.d/04hwui:system/etc/init.d/04hwui \
@@ -45,7 +45,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 endif
 
 # zram init.d script
-ifndef BUILD_EXCLUDE_ZRAM_FIX
+ifneq (,$(filter true 1,$(TARGET_INCLUDE_ZRAM_SUPPORT)))
 
 PRODUCT_COPY_FILES += \
     device/amazon/otter/prebuilt/etc/init.d/05zram:system/etc/init.d/05zram \
