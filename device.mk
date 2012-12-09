@@ -79,6 +79,10 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_FOLDER)/root/init.omap4430.usb.rc:/root/init.omap4430.usb.rc \
     $(DEVICE_FOLDER)/root/ueventd.omap4430.rc:/root/ueventd.omap4430.rc \
 
+ifdef CM_BUILD
+PRODUCT_COPY_FILES += $(DEVICE_FOLDER)/root/init.rc.cm10:/root/init.rc
+endif
+
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml \
