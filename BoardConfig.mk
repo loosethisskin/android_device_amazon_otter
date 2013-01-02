@@ -99,13 +99,20 @@ USE_OPENGL_RENDERER := true
 TARGET_CUSTOM_RELEASETOOL := ./device/amazon/otter/releasetools/squisher
 
 # Recovery
-TARGET_PREBUILT_RECOVERY_KERNEL := device/amazon/otter/recovery-kernel
+#TARGET_PREBUILT_RECOVERY_KERNEL := device/amazon/otter/recovery-kernel
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_ALWAYS_INSECURE := true
 BOARD_HAS_LARGE_FILESYSTEM := true
 BOARD_UMS_LUNFILE := "/sys/devices/virtual/android_usb/android0/f_mass_storage/lun/file"
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
 TARGET_RECOVERY_PRE_COMMAND := "idme postmode 1;"
+
+# TWRP
+TARGET_RECOVERY_INITRC := device/amazon/otter/root/init.recovery.rc
+DEVICE_RESOLUTION := 1024x600
+RECOVERY_TOUCHSCREEN_SWAP_XY := true
+RECOVERY_TOUCHSCREEN_FLIP_Y := true
+TARGET_USERIMAGES_USE_EXT4 := true
 
 # adb has root
 ADDITIONAL_DEFAULT_PROPERTIES += ro.secure=0
