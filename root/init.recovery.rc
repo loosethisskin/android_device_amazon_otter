@@ -16,7 +16,7 @@ on init
     mount /tmp /tmp tmpfs
 
 # reduce backlight usage in recovery
-    write /sys/class/leds/lcd-backlight/brightness 50
+    write /sys/class/leds/lcd-backlight/brightness 100
 
 # compatibility w/ 2.6 kernels
     symlink /dev/block/platform/omap/omap_hsmmc.1 /dev/block/platform/mmci-omap-hs.1
