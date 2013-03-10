@@ -42,9 +42,5 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_FOLDER)/prebuilt/etc/mountd.conf:/system/etc/mountd.conf \
     $(DEVICE_FOLDER)/prebuilt/etc/vold.fstab:/system/etc/vold.fstab
 
-# frandom
-PRODUCT_COPY_FILES += \
-    $(DEVICE_FOLDER)/prebuilt/etc/init.d/00random:system/etc/init.d/00random \
-
 $(call inherit-product-if-exists, vendor/amazon/otter/otter-vendor.mk)
 
