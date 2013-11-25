@@ -14,5 +14,7 @@
 # limitations under the License.
 #
 
-PRODUCT_MAKEFILES := $(LOCAL_DIR)/full_otter.mk
+PRODUCT_MAKEFILES := \
+    $(LOCAL_DIR)/full_otter.mk \
+    $(LOCAL_DIR)/omni_otter.mk
 
